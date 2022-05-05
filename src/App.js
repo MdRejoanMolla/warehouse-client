@@ -1,13 +1,23 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Banner from './component/Banner/Banner';
 import Footer from './component/Footer/Footer';
 import Header from './component/Header/Header';
+import Home from './page/Home/Home'
+import Login from './page/Login/Login';
+import NotFound from './page/Notfound/NotFound';
+import Register from './page/Register/Register';
+
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
-      <Banner></Banner>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="*" element={<NotFound></NotFound>} />
+      </Routes>
       <Footer></Footer>
 
     </div>
