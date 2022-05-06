@@ -16,17 +16,17 @@ const Register = () => {
                         <form>
                               <div className="input-group">
 
-                                    <input type='email' name='email' placeholder='input your email' id='' required />
+                                    <input type='email' name='email' placeholder='input your email' id='1' required />
 
                               </div>
                               <div className="input-group">
 
-                                    <input type='password' name='password' placeholder='input your password' id='' required />
+                                    <input type='password' name='password' placeholder='input your password' id='2' required />
 
                               </div>
                               <div className="input-group">
 
-                                    <input type='.conform-password' name='password' placeholder='input your conform-password' id='' required />
+                                    <input type='.conform-password' name='password' placeholder='input your conform-password' id='3' required />
 
                               </div>
                               <input className='form-submit' type="submit" value="Register" />
