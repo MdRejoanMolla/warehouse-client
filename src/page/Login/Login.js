@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
-import google from '../../component/picture/google.png'
+
+import { ToastContainer } from 'react-bootstrap';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
       return (
@@ -11,12 +13,12 @@ const Login = () => {
                         <form>
                               <div className="input-group">
 
-                                    <input type='email' name='email' placeholder='input your email' id='' />
+                                    <input type='email' name='email' placeholder='input your email' id='' required />
 
                               </div>
                               <div className="input-group">
 
-                                    <input type='password' name='password' placeholder='input your password' id='' />
+                                    <input type='password' name='password' placeholder='input your password' id='' required />
 
                               </div>
                               <input className='form-submit' type="submit" value="Login" />
@@ -24,18 +26,9 @@ const Login = () => {
                         <p>
                               New to Bike-Warehouse?<Link className='form-link' to='/register'>Create an account</Link>
                         </p>
-                        <div className='d-flex align-items-center'>
-                              <div style={{ height: '2px' }} className='bg-primary w-50'></div>
-                              <p className='mt-2 px-3'>or</p>
-                              <div style={{ height: '2px' }} className='bg-primary w-50'></div>
+                        <SocialLogin></SocialLogin>
 
-                        </div>
-                        <div>
-                              <button className='btn btn-light w-50 my-3'>
-                                    <img style={{ width: '30px' }} src={google} alt="" />
-                                    <span className='px-3'>Google Sign In</span>
-                              </button>
-                        </div>
+                        <ToastContainer />
                   </div>
             </div>
       );
