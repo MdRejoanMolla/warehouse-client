@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import "./Login.css"
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
@@ -82,7 +83,11 @@ const Login = () => {
                         <p>
                               New to Bike-Warehouse?<Link className='form-link' to='/register'>Create an account</Link>
                         </p>
+                        { errorElement}
+                        <p className='mt-5'>Forget Password ? <button className=' btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
+                        
                         <SocialLogin></SocialLogin>
+
 
                         <ToastContainer />
                   </div>
