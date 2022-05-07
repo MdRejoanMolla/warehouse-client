@@ -15,6 +15,7 @@ const Login = () => {
       const navigate = useNavigate();
       const location = useLocation();
 
+
       let from = location?.state?.from?.pathname || '/';
       let errorElement;
       const [user] = useAuthState(auth)
@@ -24,14 +25,14 @@ const Login = () => {
             ,
             loading,
             error,
-      ] = useSignInWithEmailAndPassword(auth);
+      ] = useSignInWithEmailAndPassword(auth, { sendEmailVerification: true });
 
       const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth, { sendEmailVerification: true });
 
 
 
       if (loading || sending) {
-            return <Loading/>
+            return <Loading />
       }
       if (user) {
             navigate(from, { replace: true })
@@ -67,25 +68,25 @@ const Login = () => {
             <div className='form-container'>
                   <div>
                         <h1 form-title>Login</h1>
-                        <form  onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit}>
                               <div className="input-group">
 
-                                    <input  type='email' name='email' placeholder='input your email' id='1' required />
+                                    <input type='email' name='email' placeholder='input your email' id='1' required />
 
                               </div>
                               <div className="input-group">
 
-                                    <input  type='password' name='password' placeholder='input your password' id='2' required />
+                                    <input type='password' name='password' placeholder='input your password' id='2' required />
 
                               </div>
                               <input className='form-submit' type="submit" value="Login" />
                         </form>
                         <p>
-                              New to Bike-Warehouse?<Link className='form-link' to='/register'>Create an account</Link>
+                              New to Bike-Warehouse?<Link onClick={navigateRegister} className='form-link' to='/register'>Please Sign In </Link>
                         </p>
-                        { errorElement}
+                        {errorElement}
                         <p className='mt-5'>Forget Password ? <button className=' btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
-                        
+
                         <SocialLogin></SocialLogin>
 
 

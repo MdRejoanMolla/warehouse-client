@@ -10,6 +10,7 @@ import auth from '../../firebase.init';
 
 
 
+
 const Register = () => {
 
 
@@ -23,12 +24,21 @@ const Register = () => {
       const [updateProfile, updating, updateError] = useUpdateProfile(auth, { sendEmailVerification: true });
 
       const navigate = useNavigate();
+      let errorElement;
+
       const navigateLogin = () => {
             navigate('/login');
       }
+
       if (loading || updating) {
             return <Loading></Loading>
       }
+      if (error) {
+
+            errorElement = <p>Error: {error.message}</p>
+
+      }
+
 
 
 
@@ -49,7 +59,7 @@ const Register = () => {
 
 
       return (
-            <div className='form-container'>
+            <div className='form-register'>
 
                   <div>
                         <h1 form-title>Register</h1>
@@ -73,11 +83,13 @@ const Register = () => {
                                     <input type='.conform-password' name='password' placeholder='input your conform-password' id='4' required />
 
                               </div>
-                              <input className='form-submit' type="submit" value="Register" />
+                              <input
+                                    className='form-submit' type="submit" value="Register" />
                         </form>
                         <p>
-                              You have already account?<Link className='form-link' to='/login'>Place Login</Link>
+                              You have already account?<Link className='form-link' to='/login' onClick={navigateLogin}>Place Login</Link>
                         </p>
+                        {errorElement}
                         <SocialLogin></SocialLogin>
                         <ToastContainer />
                   </div>
