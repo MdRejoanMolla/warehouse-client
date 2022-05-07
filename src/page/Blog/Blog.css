@@ -1,0 +1,14 @@
+.blog {
+      border: 10px solid rgb(39, 165, 181);
+      margin: 5px;
+      border-radius: 12%;
+      padding: 30px;
+      gap: 10px;
+
+      background-color: rgb(221, 232, 232);
+
+}
+
+.write {
+      margin-bottom: 25px;
+}

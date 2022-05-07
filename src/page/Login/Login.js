@@ -22,10 +22,10 @@ const Login = () => {
 
       const [
             signInWithEmailAndPassword,
-            ,
+            user1,
             loading,
             error,
-      ] = useSignInWithEmailAndPassword(auth, { sendEmailVerification: true });
+      ] = useSignInWithEmailAndPassword(auth);
 
       const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth, { sendEmailVerification: true });
 
@@ -34,7 +34,7 @@ const Login = () => {
       if (loading || sending) {
             return <Loading />
       }
-      if (user) {
+      if (user || user1) {
             navigate(from, { replace: true })
       }
       if (error) {
