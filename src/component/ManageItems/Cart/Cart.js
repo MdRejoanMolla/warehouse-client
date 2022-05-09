@@ -3,7 +3,7 @@ import React from 'react';
 import './Cart.css'
 
 const Cart = ({ items }) => {
-      const { name, img, stock, price } = items;
+      const { name, img, stock, price, saplair } = items;
 
 
 
@@ -13,6 +13,8 @@ const Cart = ({ items }) => {
                   <h3>{name}</h3>
                   <h4>Price $ {price}</h4>
                   <h4>Stack : {stock}</h4>
+                  <h4>Supplier : {saplair}</h4>
+
 
             </div>
       );

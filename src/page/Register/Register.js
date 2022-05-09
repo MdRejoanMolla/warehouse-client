@@ -48,7 +48,7 @@ const Register = () => {
             const name = event.target.name.value;
             const email = event.target.email.value;
             const password = event.target.password.value;
-
+            console.log(email, password);
 
             await createUserWithEmailAndPassword(email, password);
             await updateProfile({ displayName: name });
@@ -80,7 +80,7 @@ const Register = () => {
                               </div>
                               <div className="input-group">
 
-                                    <input type='.conform-password' name='password' placeholder='input your conform-password' id='4' required />
+                                    <input type='.conform-password' placeholder='input your conform-password' id='4' required />
 
                               </div>
                               <input

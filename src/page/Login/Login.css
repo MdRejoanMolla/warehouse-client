@@ -1,5 +1,5 @@
 .form-container {
-      width: 600px;
+      width: 500px;
       margin: 5px auto;
       border: 1px solid #95a0a7;
       box-sizing: border-box;
@@ -20,7 +20,7 @@
 }
 
 .input-group input {
-      width: 415px;
+      width: 350px;
       height: 55px;
       border: 1px solid #95a0a7;
       box-sizing: border-box;
