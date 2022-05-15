@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

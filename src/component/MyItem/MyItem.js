@@ -19,13 +19,13 @@ const MyItem = () => {
             getMyItem();
 
       }, [user])
-      if (user?.email) {
-            return (
-                  <div className='my'>
-                        <h1>myItem{myItem.length}</h1>
-                  </div>
-            );
-      }
+
+      return (
+            <div className='my'>
+                  <h1>myItem{myItem.length}</h1>
+            </div>
+      );
+
 
 };
 

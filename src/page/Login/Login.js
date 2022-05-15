@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
-import "./Login.css"
+import "./Login.css";
+import axios from 'axios'
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
@@ -35,7 +36,7 @@ const Login = () => {
             return <Loading></Loading>
       }
       if (user) {
-            navigate(from, { replace: true })
+            // navigate(from, { replace: true })
       }
       if (error) {
 
@@ -43,13 +44,15 @@ const Login = () => {
 
       }
 
-      const handleSubmit = event => {
+      const handleSubmit = async event => {
             event.preventDefault();
             const email = emailRef.current.value;
             const password = passwordRef.current.value;
 
-            signInWithEmailAndPassword(email, password);
-
+            await signInWithEmailAndPassword(email, password);
+            const { data } = await axios.post('http://localhost:5000/login', { email });
+            localStorage.setItem('accessToken', data.accessToken);
+            navigate(from, { replace: true })
       }
       const navigateRegister = event => {
             navigate('/register');

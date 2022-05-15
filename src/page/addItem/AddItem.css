@@ -1,4 +1,10 @@
 .inp input {
       height: 50px;
       font-size: 24px;
+      background-color: rgb(153, 186, 202);
+}
+
+.add {
+
+      background-color: rgb(159, 126, 87);
 }

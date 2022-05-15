@@ -1,3 +1,4 @@
+import { ToastContainer } from 'react-bootstrap';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './component/Footer/Footer';
@@ -38,7 +39,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
       <Footer></Footer>
-
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

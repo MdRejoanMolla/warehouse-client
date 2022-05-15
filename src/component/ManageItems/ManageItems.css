@@ -17,7 +17,7 @@
 @media only screen and (min-width : 577px) and (max-width:992px) {
       .items-container {
             grid-template-columns: repeat(2, 1fr);
-            background-color: rgb(215, 193, 238);
+            background-color: rgb(200, 193, 208);
       }
 
 }

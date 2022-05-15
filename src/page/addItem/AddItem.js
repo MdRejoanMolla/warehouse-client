@@ -16,16 +16,16 @@ const AddItem = () => {
             })
                   .then(res => res.json())
                   .then(result => {
-                        toast(result)
+                        toast("Item add", result)
                   })
 
 
 
       };
       return (
-            <div className='w-50 mx-auto'>
+            <div className='add'>
                   <h2>Please add Item</h2>
-                  <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+                  <form className='inp  w-50 d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                         <input className='mb-3' placeholder='NAME' {...register("name", { required: true, maxLength: 20 })} />
 
                         <input className='mb-3' placeholder='Price' type="number" {...register("price")} />
