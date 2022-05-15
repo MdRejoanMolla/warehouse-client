@@ -11,7 +11,7 @@ const Inventory = () => {
       const handelDelete = id => {
             const proceed = window.confirm("are you sure?");
             if (proceed) {
-                  const url = `http://localhost:5000/manageItem/${id}`;
+                  const url = `https://hidden-mountain-97145.herokuapp.com/manageItem/${id}`;
                   fetch(url, {
                         method: "DELETE"
                   })

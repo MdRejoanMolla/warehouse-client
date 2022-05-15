@@ -4,9 +4,9 @@ import { toast } from 'react-toastify';
 import './AddItem.css'
 
 const AddItem = () => {
-      const { register, handleSubmit } = useForm();
+      let { register, handleSubmit } = useForm();
       const onSubmit = data => {
-            const url = `http://localhost:5000/manageItem`;
+            const url = `https://hidden-mountain-97145.herokuapp.com/manageItem`;
             fetch(url, {
                   method: "post",
                   headers: {
@@ -17,15 +17,16 @@ const AddItem = () => {
                   .then(res => res.json())
                   .then(result => {
                         toast("Item add", result)
+                        let register = []
                   })
 
 
-
       };
+
       return (
             <div className='add'>
                   <h2>Please add Item</h2>
-                  <form className='inp  w-50 d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+                  <form className='inp w-50 m-auto d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                         <input className='mb-3' placeholder='NAME' {...register("name", { required: true, maxLength: 20 })} />
 
                         <input className='mb-3' placeholder='Price' type="number" {...register("price")} />

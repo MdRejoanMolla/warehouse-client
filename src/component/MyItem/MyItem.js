@@ -12,7 +12,7 @@ const MyItem = () => {
       useEffect(() => {
             const getMyItem = async () => {
                   const email = user?.email;
-                  const url = `http://localhost:5000/manageItem?email=${email}`;
+                  const url = `https://hidden-mountain-97145.herokuapp.com/manageItem?email=${email}`;
                   const { data } = await axios.get(url);
                   setMyItem(data)
             }

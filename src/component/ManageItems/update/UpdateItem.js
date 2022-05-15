@@ -10,7 +10,7 @@ const UpdateItem = () => {
       const navigate = useNavigate();
       let addStock = {}
       useEffect(() => {
-            const url = `http://localhost:5000/manageItem/${manageItemId}`;
+            const url = `https://hidden-mountain-97145.herokuapp.com/manageItem/${manageItemId}`;
             fetch(url)
                   .then(res => res.json())
                   .then(data => setUpdateItem(data));
@@ -25,7 +25,7 @@ const UpdateItem = () => {
       }
 
       const handleUpdate = id => {
-            const url = `http://localhost:5000/manageItem/${id}`;
+            const url = `https://hidden-mountain-97145.herokuapp.com/manageItem/${id}`;
             fetch(url, {
                   method: "update",
 

@@ -1,8 +1,19 @@
-# Getting Started with Create React App
+# BIKE WAREHOUSE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [live link](https://bike-warehouse-ceeb8.web.app/).
 
-## Available Scripts
+## BULLET POINT
+
+- AXIOS
+- JWT
+- HEROKU
+- FIREBASE
+- REACT FIREBASE HOOK
+- BOOTSTRAP
+- REACT ROUTER
+
+
+
 
 In the project directory, you can run:
 
