@@ -1,0 +1,23 @@
+.invent {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      box-shadow: 10px;
+      margin: 5px;
+}
+
+@media only screen and (max-width:992px) {
+      .invent {
+            grid-template-columns: repeat(1, 1fr);
+            background-color: rgb(232, 218, 218);
+      }
+
+}
+
+@media only screen and (min-width : 577px) and (max-width:992px) {
+      .invent {
+            grid-template-columns: repeat(2, 1fr);
+            background-color: rgb(215, 193, 238);
+      }
+
+}

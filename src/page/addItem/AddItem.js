@@ -15,11 +15,11 @@ const AddItem = () => {
             })
                   .then(res => res.json()
                         .then(result => {
-                              console.log(result);
+
                         })
                   )
 
-            console.log(data)
+
       };
       return (
             <div className='w-50 mx-auto'>

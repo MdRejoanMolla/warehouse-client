@@ -1,0 +1,17 @@
+.update-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+}
+
+.update {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin: 5px auto;
+      width: 75%;
+}
+
+.button {
+      width: 70%;
+      height: 30px;
+      margin: 0 auto;
+}
