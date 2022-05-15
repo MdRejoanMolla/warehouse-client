@@ -6,7 +6,7 @@ import './UpdateItem.css'
 const UpdateItem = () => {
       const { manageItemId } = useParams();
       const [updateItem, setUpdateItem] = useState({});
-      const { register, handleSubmit } = useForm();
+      const { register } = useForm();
       const navigate = useNavigate();
       let addStock = {}
       useEffect(() => {
@@ -24,22 +24,21 @@ const UpdateItem = () => {
             navigate('/inventories');
       }
 
-      const onSubmit = data => {
-            const url = `http://localhost:5000/manageItem/${manageItemId}`;
+      const handleUpdate = id => {
+            const url = `http://localhost:5000/manageItem/${id}`;
             fetch(url, {
-                  method: "post",
-                  headers: {
-                        "content-type": "application/json"
-                  },
-                  body: JSON.stringify(data),
-            })
-                  .then(res => res.json()
-                        .then(result => {
-                              console.log(result);
-                        })
-                  )
+                  method: "update",
 
-            console.log(data)
+            })
+                  .then(res => res.json())
+                  .then(data => {
+                        const remaining = updateItem.filter(updateItem => updateItem._id !== id)
+                        console.log(data)
+                        setUpdateItem(remaining)
+                  })
+
+
+
       };
 
       return (
@@ -54,16 +53,13 @@ const UpdateItem = () => {
                         <button className='btn btn-success mb-2'>Deliver</button>
                   </div>
                   <div className="update">
-                        <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+                        <form className='d-flex flex-column'>
                               <input className='mb-4' placeholder='Quantity' type="number" {...register("stock")} />
 
-                              <input className='mb-3' type="submit" value='addItem' />
+                              <input onClick={() => handleUpdate(updateItem._id)} className='mb-3' type="submit" value='addItem' />
                               <input className='mb-3' type="submit" value='Delivered' />
-
+                              <input onClick={() => navigateInventories()} className='mb-3' type="submit" value='Manage Inventories' />
                         </form>
-
-                        <input onClick={() => navigateInventories()} className='mb-3' type="submit" value='Delivered' />
-
                   </div>
             </div>
       )

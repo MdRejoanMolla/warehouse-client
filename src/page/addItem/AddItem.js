@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 import './AddItem.css'
 
 const AddItem = () => {
@@ -13,11 +14,11 @@ const AddItem = () => {
                   },
                   body: JSON.stringify(data),
             })
-                  .then(res => res.json()
-                        .then(result => {
+                  .then(res => res.json())
+                  .then(result => {
+                        toast(result)
+                  })
 
-                        })
-                  )
 
 
       };

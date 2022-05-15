@@ -1,11 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import useItems from '../hook/useItem';
 import './Inventory.css';
 
 const Inventory = () => {
 
-
+      const navigate = useNavigate();
       const [items, setItems] = useItems();
       const handelDelete = id => {
             const proceed = window.confirm("are you sure?");
@@ -22,7 +23,9 @@ const Inventory = () => {
                         })
             }
       }
-
+      const navigateNewItem = event => {
+            navigate('/addItem');
+      }
 
       return (
             <div className='invent'>
@@ -34,12 +37,14 @@ const Inventory = () => {
                               <h4>Price $ {item.price}</h4>
                               <h4>Stack : {item.stock}</h4>
                               <h4>Supplier : {item.saplair}</h4>
-                              <button onClick={() => handelDelete(item._id)}>Delete</button>
+                              <button className='mr-10' onClick={() => handelDelete(item._id)}>Delete</button>
+                              <button onClick={() => navigateNewItem()} >Add New Item</button>
+
                         </div>)
                   }
 
 
-            </div>
+            </div >
       );
 };
 

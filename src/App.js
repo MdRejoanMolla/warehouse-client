@@ -6,6 +6,7 @@ import Inventory from './component/inventory/Inventory';
 import ManageItems from './component/ManageItems/ManageItems';
 import Manageitems from './component/ManageItems/ManageItems';
 import UpdateItem from './component/ManageItems/update/UpdateItem';
+import MyItem from './component/MyItem/MyItem';
 import About from './page/About/About';
 import AddItem from './page/addItem/AddItem';
 import Blog from './page/Blog/Blog';
@@ -31,6 +32,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/manageItem/:manageItemId" element={<RequireAuth><UpdateItem /></RequireAuth>} />
         <Route path="/about" element={<About />} />
+        <Route path="/myItem" element={<MyItem />} />
         <Route path="/inventories" element={<Inventory />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound></NotFound>} />
